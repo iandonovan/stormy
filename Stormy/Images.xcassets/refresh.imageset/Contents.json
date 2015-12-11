@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "cloudy-night_large.png"
+      "filename" : "refresh.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "cloudy-night_large@2x.png"
+      "filename" : "refresh@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "cloudy-night_large@3x.png"
+      "filename" : "refresh@3x.png"
     }
   ],
   "info" : {
