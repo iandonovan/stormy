@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Wbr-VC-za1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Wbr-VC-za1">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Weekly-->
@@ -66,14 +68,55 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ps0-7C-awr">
-                                <rect key="frame" x="0.0" y="242" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="weatherCell" rowHeight="64" id="ps0-7C-awr" customClass="DailyWeatherTableViewCell" customModule="Stormy" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="242" width="600" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ps0-7C-awr" id="Sh7-z5-9tx">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="63.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temperatureIconBG" translatesAutoresizingMaskIntoConstraints="NO" id="HRR-L3-pJV">
+                                            <rect key="frame" x="191" y="11" width="42" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="HRR-L3-pJV" secondAttribute="height" multiplier="20:21" id="WDO-ls-WKg"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 67º" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPu-76-uxW">
+                                            <rect key="frame" x="201" y="26" width="21" height="14"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                                            <color key="textColor" red="0.074509803921568626" green="0.054901960784313725" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="foC-5u-wUa">
+                                            <rect key="frame" x="258" y="12" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="foC-5u-wUa" secondAttribute="height" multiplier="1:1" id="M1t-PW-BrS"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qB9-Tw-wjk">
+                                            <rect key="frame" x="321" y="21" width="90" height="22"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qB9-Tw-wjk" firstAttribute="leading" secondItem="foC-5u-wUa" secondAttribute="trailing" constant="23" id="3MM-sX-0ny"/>
+                                        <constraint firstItem="HRR-L3-pJV" firstAttribute="top" secondItem="Sh7-z5-9tx" secondAttribute="topMargin" constant="3" id="3VH-hX-eAc"/>
+                                        <constraint firstItem="ZPu-76-uxW" firstAttribute="centerX" secondItem="HRR-L3-pJV" secondAttribute="centerX" id="5P4-Dk-SvX"/>
+                                        <constraint firstItem="HRR-L3-pJV" firstAttribute="centerX" secondItem="Sh7-z5-9tx" secondAttribute="centerX" constant="-88" id="NmO-85-muc"/>
+                                        <constraint firstItem="foC-5u-wUa" firstAttribute="top" secondItem="Sh7-z5-9tx" secondAttribute="topMargin" constant="4" id="SNb-cN-IkB"/>
+                                        <constraint firstItem="foC-5u-wUa" firstAttribute="centerX" secondItem="Sh7-z5-9tx" secondAttribute="centerX" constant="-22" id="gLt-OE-ghn"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="foC-5u-wUa" secondAttribute="bottom" constant="3.5" id="h5M-FT-g6Y"/>
+                                        <constraint firstItem="qB9-Tw-wjk" firstAttribute="centerY" secondItem="Sh7-z5-9tx" secondAttribute="centerY" id="ma8-q8-9mc"/>
+                                        <constraint firstItem="ZPu-76-uxW" firstAttribute="centerY" secondItem="HRR-L3-pJV" secondAttribute="centerY" id="s7l-VP-4v9"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.19677280859473684" green="0.42784795459736841" blue="0.90052939967105272" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
+                                    <outlet property="dayLabel" destination="qB9-Tw-wjk" id="Dgm-2g-Bfy"/>
+                                    <outlet property="temperatureLabel" destination="ZPu-76-uxW" id="uRu-En-Ku6"/>
+                                    <outlet property="weatherIcon" destination="foC-5u-wUa" id="gBF-O7-McL"/>
                                     <segue destination="vXZ-lx-hvc" kind="show" id="Z0S-8i-OA3"/>
                                 </connections>
                             </tableViewCell>
@@ -135,5 +178,7 @@
     </scenes>
     <resources>
         <image name="clear-day" width="58" height="60"/>
+        <image name="default" width="28" height="28"/>
+        <image name="temperatureIconBG" width="42" height="43"/>
     </resources>
 </document>
